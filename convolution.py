@@ -2,11 +2,11 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-def convolution_operation(surrondingPixels, kernel):
+def convolution_operation(surroundingPixels, kernel):
     sum = 0
 
     i = 0
-    for pixelRow in surrondingPixels:
+    for pixelRow in surroundingPixels:
         j = 0
         for pixel in pixelRow:
             sum += pixel * kernel[i][j]
@@ -15,7 +15,7 @@ def convolution_operation(surrondingPixels, kernel):
     
     return sum
 
-def get_surronding_pixels(pixelMatrix, pixelPosition, size):
+def get_surrounding_pixels(pixelMatrix, pixelPosition, size):
     w = size//2
 
     posX = pixelPosition[0]
@@ -64,7 +64,7 @@ def filter_2D_grey(image, kernel):
     
     for y in range(0, image.shape[0]):
         for x in range(0, image.shape[0]):
-            surrondingPixels = get_surronding_pixels(image, (x, y), kernel.shape[0])
+            surrondingPixels = get_surrounding_pixels(image, (x, y), kernel.shape[0])
             pixelSum = convolution_operation(surrondingPixels, kernel)
 
             # Clamp value between 0 & 255
