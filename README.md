@@ -2,7 +2,6 @@
 computer vision assignment
 
 # setup
-1. ```$ source bin/activate``` 
-2. Thats it
-3. To run it do ```$ python main.py```
-4. To leave venv do ```$ deactivate```
+1. ```$ python3 -m venv venv```
+2. ```$ source bin/activate```
+3. ```$ pip install -r requirements.txt```
